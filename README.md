@@ -89,6 +89,21 @@ RBU ClassLens is being built **in phases**, with a strong emphasis on:
 
 ---
 
+## Local demo
+
+The current application is a browser-local demo built with React, TypeScript, and Vite. It does not connect to Google Classroom or a production backend. Demo sign-in lets you explore the teacher and student roles; records are stored in this browser's `localStorage`.
+
+```sh
+npm install
+npm run dev
+```
+
+Teachers can create classes, share the displayed class code, post announcements and classwork, review submissions, and upload notes. Students can join a class, comment, open notes, and turn in work. Files are limited to 2 MB in this demo. A PDF is marked viewed only after its embedded viewer loads; the saved activity is the student's identity, PDF note, and first-open time. No reading percentage is collected. The client-side demo activity log is not a secure or reliable substitute for server-side authentication and authorization.
+
+Before production use, connect a trusted backend for account authentication, database and file storage, enforce role and class ownership on the server, and move PDF-view events to a server-authorized endpoint. Do not treat browser-local data or demo identities as production records.
+
+---
+
 ## ❓ Problem Statement
 
 Many educational institutions — especially smaller colleges, coaching centers, and universities — face recurring challenges with digital learning management:
